@@ -3,6 +3,9 @@
 
 A lightweight and flexible state management library for TS and JS projects. This library provides a simple way to share and manage state across your application with reducers, subscriptions, actions, middleware, and a reset function.
 
+## React
+Recommend using [zentropy-react](https://www.npmjs.com/package/zentropy-react)
+
 ## Why Use This Library?
 
 Unlike verbose state management solutions like Redux, this library is:
