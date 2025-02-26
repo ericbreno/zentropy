@@ -1,4 +1,4 @@
-import State, { makeState } from '../src/State';
+import State, { makeState } from '../src/zentropy';
 
 type Person = {
   name: string;
@@ -159,9 +159,15 @@ describe('State class should', () => {
         increment: (state) => state + 1,
       },
     });
-    state.use(logger);
+
+    const unsub = state.use(logger);
     state.dispatch("increment");
     expect(logger).toHaveBeenCalledWith(1, "increment", undefined);
+
+    unsub();
+
+    state.dispatch("increment");
+    expect(logger).toHaveBeenCalledTimes(1);
   });
 
   test("not dispatch unknown actions", () => {

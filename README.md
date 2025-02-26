@@ -49,9 +49,13 @@ const counterState = makeState({
 ### Subscribing to State Changes
 
 ```typescript
-counterState.subscribe((value) => {
+// Subscribing returns the unsub function, in case you don't want to use the state.unsubscribe() method
+const unsub = counterState.subscribe((value) => {
   console.log("Counter updated:", value);
 });
+
+// Will remove the listener and no longer be called on state changes
+unsub();
 ```
 
 ### Updating State Directly
@@ -91,7 +95,8 @@ counterState.reset();
 Middleware functions allow you to intercept state updates, useful for logging, debugging, or persisting state.
 
 ```typescript
-counterState.use((state, action, payload) => {
+// Also returns an unsub callback so you can remove this middleware
+const unsub = counterState.use((state, action, payload) => {
   console.log(`Action: ${action}, Payload:`, payload, "New State:", state);
 });
 

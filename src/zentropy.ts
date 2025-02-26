@@ -19,7 +19,7 @@ export class State<T, RK extends string> {
   private listeners: Listeners<T> = new Set();
   private reducers: Reducers<T, RK>;
 
-  private middlewares: Middleware<T>[] = [];
+  private middlewares: Set<Middleware<T>> = new Set();
 
   constructor({ initial, reducers = {} as any }: MakeProps<T, RK>) {
     this.initialState = initial;
@@ -31,8 +31,10 @@ export class State<T, RK extends string> {
     return this.state;
   }
 
-  subscribe(fn: Listener<T>): void {
+  subscribe(fn: Listener<T>): () => void {
     this.listeners.add(fn);
+
+    return () => this.listeners.delete(fn);
   }
 
   unsubscribe(fn: Listener<T>): void {
@@ -62,8 +64,10 @@ export class State<T, RK extends string> {
     this.update(this.initialState);
   }
 
-  use(middleware: Middleware<T>): void {
-    this.middlewares.push(middleware);
+  use(middleware: Middleware<T>): () => void {
+    this.middlewares.add(middleware);
+
+    return () => this.middlewares.delete(middleware);
   }
 
   get actions(): Record<RK, (payload?: any) => void> {
