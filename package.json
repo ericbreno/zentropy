@@ -1,7 +1,7 @@
 {
   "name": "zentropy",
   "version": "1.0.0",
-  "description": "",
+  "description": "A lightweight and flexible state management library for TS and JS projects.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
   },
   "files": ["dist"],
   "keywords": ["zentropy", "state", "management", "state management"],
-  "author": "",
+  "author": "Eric Santos",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.14",
