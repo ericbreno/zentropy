@@ -9,6 +9,6 @@
     "emitDeclarationOnly": false,
     "strict": true
   },
-  "include": ["src"],
+  "include": ["index.ts"],
   "exclude": ["node_modules", "dist", "tests"]
 }
