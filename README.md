@@ -1,7 +1,7 @@
 # Zentropy
 #### Zen (simplicity) + Entropy (state change)
 
-A lightweight and flexible state management library for TypeScript projects. This library provides a simple way to share and manage state across your application with reducers, subscriptions, actions, middleware, and a reset function.
+A lightweight and flexible state management library for TS and JS projects. This library provides a simple way to share and manage state across your application with reducers, subscriptions, actions, middleware, and a reset function.
 
 ## Why Use This Library?
 
