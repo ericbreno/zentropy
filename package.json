@@ -1,6 +1,6 @@
 {
   "name": "zentropy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight and flexible state management library for TS and JS projects.",
   "main": "dist/index.js",
   "module": "dist/index.js",
