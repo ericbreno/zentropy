@@ -1,13 +1,13 @@
 {
   "name": "zentropy",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A lightweight and flexible state management library for TS and JS projects.",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",
